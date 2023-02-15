@@ -1,0 +1,6 @@
+.button_actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 10px;
+}

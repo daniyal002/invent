@@ -29,11 +29,9 @@ const Warhouse = () => {
   } else {
     return (
       <div className="items">
-        <div className="container">
-          <Post url={"https://localhost:7274/api/warehouses"} />
-          <div className="items__block">
-            <WarehouseItem warehouse={warehouse} />
-          </div>
+        <Post url={"https://localhost:7274/api/warehouses"} />
+        <div className="items__block">
+          <WarehouseItem warehouse={warehouse} />
         </div>
       </div>
     );

@@ -3,7 +3,7 @@ import "./Stock.css";
 import StockItem from "./StockItem/StockItem";
 import Post from "./StockPost/Post";
 import axios from "axios";
-import { Input } from "antd";
+import { Input, Row, Col } from "antd";
 
 const Stock = () => {
   const [error, setError] = React.useState(null);
@@ -35,16 +35,22 @@ const Stock = () => {
   } else {
     return (
       <div className="items">
-        <div className="container">
-          <Post url={"https://localhost:7240/api/stocks"} />
-          <div className="items__block">
+        <Row justify={"center"}>
+          <Col xs={10} sm={10} md={10} lg={10} xl={8}>
+            <Post url={"https://localhost:7240/api/stocks"} />
+          </Col>
+          <Col xs={10} sm={10} md={10} lg={10} xl={10}>
             <Input
               onChange={(event) => setSearchValue(event.target.value)}
               addonAfter="Поиск"
             />
+          </Col>
+        </Row>
+        <Row justify="center">
+          <Col xs={22} sm={22} md={22} lg={18} xl={18}>
             <StockItem stock={filtered} />
-          </div>
-        </div>
+          </Col>
+        </Row>
       </div>
     );
   }

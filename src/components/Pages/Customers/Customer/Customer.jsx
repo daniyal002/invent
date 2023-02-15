@@ -124,7 +124,7 @@ const Customer = ({ customers }) => {
       title: "Действия",
       key: "actions",
       render: (dataSource) => (
-        <div>
+        <div className="button_actions">
           <Button
             type={Text}
             className="btn__delete"

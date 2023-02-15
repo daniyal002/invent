@@ -22,9 +22,8 @@ const StockItem = ({ stock }) => {
 
   const handleOk = () => {
     let stockName = document.getElementById("stockNameP").value;
-    parseInt(stockName);
     axios
-      .put("https://localhost:7274/api/warehouses", {
+      .put("https://localhost:7240/api/stocks", {
         stockId: identif,
         stockName: stockName,
       })
@@ -59,7 +58,7 @@ const StockItem = ({ stock }) => {
       title: "Действия",
       key: "actions",
       render: (dataSource) => (
-        <div>
+        <div className="button_actions">
           <Button
             type={Text}
             className="btn__delete"
