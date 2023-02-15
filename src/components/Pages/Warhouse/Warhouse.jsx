@@ -12,7 +12,6 @@ const Warhouse = () => {
   React.useEffect(() => {
     axios.get("https://localhost:7274/api/warehouses").then(
       (result) => {
-        console.log(result);
         setIsLoader(true);
         setWarehouse(result.data.result);
       },

@@ -4,11 +4,18 @@ import axios from "axios";
 import { Table, Button, Modal, Input } from "antd";
 
 const StockItem = ({ stock }) => {
-  const dataSource = stock.map((item) => ({ ...item, key: item.warehouseId }));
+  const dataSource = stock.map((item) => ({
+    ...item,
+    key: item.stockId,
+    count: stock.indexOf(item),
+  }));
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const [identif, setIdentif] = React.useState(0);
+  const [stockName, setStockName] = React.useState("");
 
-  const showModal = (id) => {
+  const showModal = (id, count) => {
+    let { stockName } = dataSource[count];
+    setStockName(stockName);
     setIsModalOpen(true);
     setIdentif(id);
   };
@@ -43,13 +50,13 @@ const StockItem = ({ stock }) => {
       key: "stockId",
     },
     {
-      title: "Warehouse Name",
+      title: "Склад",
       dataIndex: "stockName",
       key: "stockName",
     },
 
     {
-      title: "Actions",
+      title: "Действия",
       key: "actions",
       render: (dataSource) => (
         <div>
@@ -63,7 +70,7 @@ const StockItem = ({ stock }) => {
           <Button
             type={Text}
             className="btn__open"
-            onClick={() => showModal(dataSource.stockId)}
+            onClick={() => showModal(dataSource.stockId, dataSource.count)}
           >
             Изменить
           </Button>
@@ -76,12 +83,18 @@ const StockItem = ({ stock }) => {
     <>
       <Table dataSource={dataSource} columns={colums} />
       <Modal
+        key={identif}
         title="Внести изменения"
         open={isModalOpen}
         onOk={handleOk}
         onCancel={handleCancel}
       >
-        <Input placeholder="Stock Name" id="stockNameP" />
+        <Input
+          placeholder="Склад"
+          id="stockNameP"
+          defaultValue={stockName}
+          addonBefore="Склад"
+        />
       </Modal>
     </>
   );

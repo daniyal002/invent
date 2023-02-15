@@ -84,51 +84,44 @@ const Customer = ({ customers }) => {
 
   const colums = [
     {
-      className: "customerId",
       title: "ID",
       dataIndex: "customerId",
       key: "customerId",
     },
     {
-      className: "customerName",
       title: "Поставщик",
       dataIndex: "customerName",
       key: "customerName",
     },
 
     {
-      className: "customerCompany",
       title: "Компания поставщика",
       dataIndex: "customerCompany",
       key: "customerCompany",
     },
     {
-      className: "customerAddress",
       title: "Адрес",
       dataIndex: "customerAddress",
       key: "customerAddress",
     },
     {
-      className: "customerCity",
       title: "Город",
       dataIndex: "customerCity",
       key: "customerCity",
     },
     {
-      className: "customerState",
       title: "Статус",
       dataIndex: "customerState",
       key: "customerState",
     },
     {
-      className: "customerPhone",
       title: "Телефон",
       dataIndex: "customerPhone",
       key: "customerPhone",
     },
 
     {
-      title: "Actions",
+      title: "Действия",
       key: "actions",
       render: (dataSource) => (
         <div>
@@ -165,7 +158,6 @@ const Customer = ({ customers }) => {
           placeholder="Поставщик"
           id="customerNameP"
           defaultValue={customerName}
-          required
           addonBefore="Поставщик"
         />
 
@@ -173,7 +165,6 @@ const Customer = ({ customers }) => {
           placeholder="Компания поставщика"
           id="customerCompanyP"
           defaultValue={customerCompany}
-          required
           addonBefore="Компания поставщика"
         />
 
@@ -181,7 +172,6 @@ const Customer = ({ customers }) => {
           placeholder="Адрес"
           id="customerAddressP"
           defaultValue={customerAddress}
-          required
           addonBefore="Адрес"
         />
 
@@ -189,7 +179,6 @@ const Customer = ({ customers }) => {
           placeholder="Город"
           id="customerCityP"
           value={customerCity}
-          required
           addonBefore="Город"
         />
 
@@ -197,7 +186,6 @@ const Customer = ({ customers }) => {
           placeholder="Статус"
           id="customerStateP"
           defaultValue={customerState}
-          required
           addonBefore="Статус"
         />
 
@@ -206,7 +194,6 @@ const Customer = ({ customers }) => {
           id="customerPhoneP"
           type="tel"
           defaultValue={customerPhone}
-          required
           addonBefore="Телефон"
         />
       </Modal>

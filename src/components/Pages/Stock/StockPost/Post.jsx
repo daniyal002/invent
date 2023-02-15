@@ -34,7 +34,11 @@ const Post = ({ url }) => {
         onOk={handleOk}
         onCancel={handleCancel}
       >
-        <Input placeholder="Stock Name" id="stockName" />
+        <Input
+          placeholder="Склада"
+          id="stockName"
+          addonBefore="Название склада"
+        />
       </Modal>
     </div>
   );

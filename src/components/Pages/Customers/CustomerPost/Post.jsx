@@ -44,12 +44,29 @@ const Post = ({ url }) => {
         onOk={handleOk}
         onCancel={handleCancel}
       >
-        <Input placeholder="Поставщик" id="customerName" />
-        <Input placeholder="Компания поставщика" id="customerCompany" />
-        <Input placeholder="Адрес" id="customerAddress" />
-        <Input placeholder="Город" id="customerCity" />
-        <Input placeholder="Состояние" id="customerState" />
-        <Input placeholder="Телефон" id="customerPhone" type="number" />
+        <Input
+          placeholder="Поставщик"
+          id="customerName"
+          addonBefore="Поставщик"
+        />
+        <Input
+          placeholder="Компания поставщика"
+          id="customerCompany"
+          addonBefore="Компания поставщика"
+        />
+        <Input placeholder="Адрес" id="customerAddress" addonBefore="Адрес" />
+        <Input placeholder="Город" id="customerCity" addonBefore="Город" />
+        <Input
+          placeholder="Состояние"
+          id="customerState"
+          addonBefore="Состояние"
+        />
+        <Input
+          placeholder="Телефон"
+          id="customerPhone"
+          type="number"
+          addonBefore="Телефон"
+        />
       </Modal>
     </div>
   );
